@@ -228,8 +228,70 @@ function renderEmptyState() {
   emptyEl.style.display = visibleCount === 0 ? "block" : "none";
 }
 
+function renderSummaryTable() {
+  // Aggregate tasks per zodpovědný × status
+  const rows = {};
+  ZAPISKY.forEach(kd => {
+    kd.ukoly.forEach(u => {
+      const s   = getUkolStatus(kd.id, u);
+      const key = u.zodpovedny;
+      if (!rows[key]) rows[key] = { trva: 0, otevreno: 0, splneno: 0 };
+      rows[key][s]++;
+    });
+  });
+
+  const order = ["Zhotovitel", "AD", "TDI / AD", "AD + INV", "Zhotovitel + AD"];
+  const sorted = order
+    .filter(k => rows[k])
+    .concat(Object.keys(rows).filter(k => !order.includes(k)));
+
+  const numCell = (val, cls) =>
+    val > 0 ? `<td class="${cls}">${val}</td>` : `<td class="num-zero">–</td>`;
+
+  let totals = { trva: 0, otevreno: 0, splneno: 0 };
+  const bodyRows = sorted.map(k => {
+    const r = rows[k];
+    totals.trva     += r.trva;
+    totals.otevreno += r.otevreno;
+    totals.splneno  += r.splneno;
+    return `<tr>
+      <td>${escHtml(k)}</td>
+      ${numCell(r.trva,     "num-trva")}
+      ${numCell(r.otevreno, "num-otevreno")}
+      ${numCell(r.splneno,  "num-splneno")}
+      <td style="font-weight:600">${r.trva + r.otevreno + r.splneno}</td>
+    </tr>`;
+  }).join("");
+
+  const total = totals.trva + totals.otevreno + totals.splneno;
+
+  document.getElementById("summary-table").innerHTML = `
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Zodpovědný</th>
+          <th style="color:var(--red)">Trvá</th>
+          <th style="color:var(--orange)">Otevřeno</th>
+          <th style="color:var(--green)">Splněno</th>
+          <th>Celkem</th>
+        </tr>
+      </thead>
+      <tbody>${bodyRows}</tbody>
+      <tfoot>
+        <tr class="tfoot">
+          <td>Celkem</td>
+          <td class="num-trva">${totals.trva}</td>
+          <td class="num-otevreno">${totals.otevreno}</td>
+          <td class="num-splneno">${totals.splneno}</td>
+          <td>${total}</td>
+        </tr>
+      </tfoot>
+    </table>`;
+}
+
 function render() {
   renderStats();
+  renderSummaryTable();
   renderZapisky();
   renderEmptyState();
   attachCardListeners();

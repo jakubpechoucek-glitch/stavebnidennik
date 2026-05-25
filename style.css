@@ -44,13 +44,74 @@ body {
 /* ── Layout ── */
 .container { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
 
+/* ── Top section ── */
+.top-section {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+  align-items: start;
+}
+
 /* ── Stats row ── */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 28px;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
+
+/* ── Summary table ── */
+.summary-wrap {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.summary-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  background: var(--gray-light);
+}
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.summary-table th {
+  padding: 7px 12px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+  background: var(--gray-light);
+}
+.summary-table th:first-child { text-align: left; }
+.summary-table td {
+  padding: 7px 12px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.summary-table td:first-child { text-align: left; font-weight: 500; }
+.summary-table tr:last-child td { border-bottom: none; }
+.summary-table tr:hover td { background: var(--gray-light); }
+.summary-table .tfoot td {
+  font-weight: 700;
+  background: var(--gray-light);
+  border-top: 2px solid var(--border);
+  border-bottom: none;
+}
+.num-trva    { color: var(--red);    font-weight: 700; }
+.num-otevreno{ color: var(--orange); font-weight: 700; }
+.num-splneno { color: var(--green);  font-weight: 700; }
+.num-zero    { color: #ccc; }
 .stat-card {
   background: var(--card);
   border-radius: var(--radius);
@@ -286,8 +347,12 @@ body {
   font-size: 14px;
 }
 
+@media (max-width: 700px) {
+  .top-section { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(3, 1fr); }
+}
+
 @media (max-width: 540px) {
-  .stats { grid-template-columns: 1fr 1fr 1fr; }
   .stat-num { font-size: 24px; }
   .kd-info { grid-template-columns: 1fr; }
   .header h1 { font-size: 15px; }

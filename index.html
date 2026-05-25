@@ -19,19 +19,25 @@
 
   <main class="container">
 
-    <!-- Stats -->
-    <div class="stats">
-      <div class="stat-card red">
-        <div class="stat-num" id="stat-trva">–</div>
-        <div class="stat-label">Trvá / nesplněno</div>
+    <!-- Top section: stats + summary table -->
+    <div class="top-section">
+      <div class="stats">
+        <div class="stat-card red">
+          <div class="stat-num" id="stat-trva">–</div>
+          <div class="stat-label">Trvá / nesplněno</div>
+        </div>
+        <div class="stat-card orange">
+          <div class="stat-num" id="stat-otevreno">–</div>
+          <div class="stat-label">Otevřeno</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-num" id="stat-splneno">–</div>
+          <div class="stat-label">Splněno</div>
+        </div>
       </div>
-      <div class="stat-card orange">
-        <div class="stat-num" id="stat-otevreno">–</div>
-        <div class="stat-label">Otevřeno</div>
-      </div>
-      <div class="stat-card green">
-        <div class="stat-num" id="stat-splneno">–</div>
-        <div class="stat-label">Splněno</div>
+      <div class="summary-wrap">
+        <div class="summary-title">Přehled podle zodpovědného</div>
+        <div id="summary-table"></div>
       </div>
     </div>
 
