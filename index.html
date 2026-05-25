@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stavební deník – Podolanka</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-icon">🏗️</div>
+    <div>
+      <h1 id="projekt-nazev">Stavební deník</h1>
+      <p id="projekt-investor"></p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-card red">
+        <div class="stat-num" id="stat-trva">–</div>
+        <div class="stat-label">Trvá / nesplněno</div>
+      </div>
+      <div class="stat-card orange">
+        <div class="stat-num" id="stat-otevreno">–</div>
+        <div class="stat-label">Otevřeno</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-num" id="stat-splneno">–</div>
+        <div class="stat-label">Splněno</div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <button class="filter-btn active" data-filter="vse">Všechny úkoly</button>
+      <button class="filter-btn" data-filter="trva">Trvá</button>
+      <button class="filter-btn" data-filter="otevreno">Otevřeno</button>
+      <button class="filter-btn" data-filter="splneno">Splněno</button>
+    </div>
+
+    <!-- KD list -->
+    <div id="zapisky"></div>
+
+    <!-- Empty state -->
+    <div id="empty-state" class="empty-state" style="display:none">
+      Žádné úkoly odpovídají zvoleném filtru.
+    </div>
+
+  </main>
+
+  <!-- Confirm dialog -->
+  <div class="overlay hidden" id="overlay">
+    <div class="dialog">
+      <h3 id="dialog-title">Označit jako splněno</h3>
+      <p id="dialog-desc">Volitelně uveďte poznámku k dokončení.</p>
+      <textarea id="dialog-note" placeholder="Poznámka (nepovinné)…"></textarea>
+      <div class="dialog-btns">
+        <button class="btn-cancel" id="dialog-cancel">Zrušit</button>
+        <button class="btn-ok"     id="dialog-ok">Potvrdit splnění</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
