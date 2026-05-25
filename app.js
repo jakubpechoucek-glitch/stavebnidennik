@@ -71,6 +71,7 @@ function computeStats() {
 // ── Filter state ──────────────────────────────────────────────────────────────
 
 let activeFilter = "vse";
+let activePersonFilter = "vse";
 
 // ── Dialog ────────────────────────────────────────────────────────────────────
 
@@ -113,6 +114,44 @@ function confirmDialog() {
   render();
 }
 
+// ── Person filter helpers ─────────────────────────────────────────────────────
+
+function splitRoles(zodpovedny) {
+  return zodpovedny.split(/\s*[+\/]\s*/).map(s => s.trim()).filter(Boolean);
+}
+
+function personInZodpovedny(zodpovedny, person) {
+  return splitRoles(zodpovedny).includes(person);
+}
+
+function uniqueRoles() {
+  const roles = new Set();
+  ZAPISKY.forEach(kd => kd.ukoly.forEach(u => splitRoles(u.zodpovedny).forEach(r => roles.add(r))));
+  const order = ["Zhotovitel", "AD", "TDI", "INV"];
+  return order.filter(r => roles.has(r)).concat([...roles].filter(r => !order.includes(r)));
+}
+
+function renderPersonFilters() {
+  const container = document.getElementById("person-filters");
+  const roles = uniqueRoles();
+  container.innerHTML = [
+    `<button class="filter-btn${activePersonFilter === "vse" ? " active" : ""}" data-person="vse">Vše</button>`,
+    ...roles.map(r =>
+      `<button class="filter-btn${activePersonFilter === r ? " active" : ""}" data-person="${escHtml(r)}">${escHtml(r)}</button>`
+    ),
+  ].join("");
+
+  container.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      activePersonFilter = btn.dataset.person;
+      renderPersonFilters();
+      renderZapisky();
+      renderEmptyState();
+      attachCardListeners();
+    });
+  });
+}
+
 // ── Render ────────────────────────────────────────────────────────────────────
 
 function formatDate(iso) {
@@ -135,7 +174,9 @@ function renderUkoly(kd) {
     const cas      = state[key]?.casPotvrzeni;
 
     const isSplneno = status === "splneno";
-    const hidden    = activeFilter !== "vse" && status !== activeFilter;
+    const statusMatch = activeFilter === "vse" || status === activeFilter;
+    const personMatch = activePersonFilter === "vse" || personInZodpovedny(u.zodpovedny, activePersonFilter);
+    const hidden = !statusMatch || !personMatch;
 
     let noteHtml = "";
     if (isSplneno && cas) {
@@ -292,6 +333,7 @@ function renderSummaryTable() {
 function render() {
   renderStats();
   renderSummaryTable();
+  renderPersonFilters();
   renderZapisky();
   renderEmptyState();
   attachCardListeners();
@@ -323,12 +365,15 @@ function attachCardListeners() {
 }
 
 function attachFilterListeners() {
-  document.querySelectorAll(".filter-btn").forEach(btn => {
+  document.querySelectorAll(".filter-btn[data-filter]").forEach(btn => {
     btn.addEventListener("click", () => {
       activeFilter = btn.dataset.filter;
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".filter-btn[data-filter]").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-      render();
+      renderPersonFilters();
+      renderZapisky();
+      renderEmptyState();
+      attachCardListeners();
     });
   });
 }

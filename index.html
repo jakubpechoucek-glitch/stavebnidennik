@@ -42,11 +42,18 @@
     </div>
 
     <!-- Filters -->
-    <div class="filters">
-      <button class="filter-btn active" data-filter="vse">Všechny úkoly</button>
-      <button class="filter-btn" data-filter="trva">Trvá</button>
-      <button class="filter-btn" data-filter="otevreno">Otevřeno</button>
-      <button class="filter-btn" data-filter="splneno">Splněno</button>
+    <div class="filter-group">
+      <span class="filter-label">Stav:</span>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="vse">Vše</button>
+        <button class="filter-btn" data-filter="trva">Trvá</button>
+        <button class="filter-btn" data-filter="otevreno">Otevřeno</button>
+        <button class="filter-btn" data-filter="splneno">Splněno</button>
+      </div>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Osoba:</span>
+      <div class="filters" id="person-filters"></div>
     </div>
 
     <!-- KD list -->
@@ -72,7 +79,7 @@
     </div>
   </div>
 
-  <script src="data.js?v=2"></script>
-  <script src="app.js?v=2"></script>
+  <script src="data.js?v=3"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>
