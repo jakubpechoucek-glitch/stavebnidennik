@@ -63,7 +63,103 @@ const ZAPISKY = [
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
         popis:
-          "Rozvody ZTI – kanalizace není správně provedena. Redukce musí být provedeny klasickou redukcí (nikoli zkrácenou), izolace v celém rozsahu. Materiál vodovodních rozvodů zaměněn z výrobce Viega na Concept – dodat technické parametry obou výrobců a jejich porovnání. Dále kotvení vodovodního potrubí dle TL výrobce (izolace a kotvení v objímkách).",
+          "Rozvody ZTI – kanalizace není správně provedena. Redukce musí být provedeny klasickou redukcí (nikoli zkrácenou), izolace v celém rozsahu. Materiál vodovodních rozvodů zaměněn z výrobce Viega na Concept – dodat technické parametry obou výrobců a jejich porovnání. Dále kotvení vodovodního potrubí dle TL výrobce (izolace a kotvení v objímkách). Pokud mají být v ležatém potrubí umístěny excentrické redukce, instalují se tak, aby rovný povrch redukce byl nahoře.",
+        status: "otevreno",
+      },
+      {
+        id: "3.7",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Otvory skrz ŽB konstrukce provádět dle PD pouze odvrty – nechat schválit.",
+        status: "otevreno",
+      },
+      {
+        id: "3.8",
+        termin: "2026-06-20",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Provede 2× vzorek omítky: štuková omítka / sádrová stěrka + malba dle zadání.",
+        status: "otevreno",
+      },
+      {
+        id: "3.9",
+        termin: "2026-05-19",
+        zodpovedny: "AD",
+        popis:
+          "AD zkonzultuje spotřebiče v kuchyňské lince pro kontrolu rozvodů voda, odpady, elektro. Zhotovitel ověří provedení na základě vybraných spotřebičů.",
+        status: "otevreno",
+      },
+      {
+        id: "3.10",
+        termin: "2026-05-19",
+        zodpovedny: "AD + INV",
+        popis:
+          "AD + INV si potvrdí povrchy – zejména koupelen, ale i ostatní. Platí PD, nebo je nějaké upřesnění?",
+        status: "otevreno",
+      },
+      {
+        id: "3.11",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Zhotovitel bude provádět polohy koncových prvků ZTI, UT a ELE dle PD interiéru.",
+        status: "otevreno",
+      },
+      {
+        id: "3.12",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Veškerá světla, která doposud nejsou provedena, budou provedena kabeláží 5×1,5.",
+        status: "otevreno",
+      },
+      {
+        id: "3.13",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Zhotovitel měl ověřit alternativu ke světlíku v pracovně – byla předložena pouze úspora ve stávající nabídce. Prosíme o alternativu od jiného dodavatele.",
+        status: "otevreno",
+      },
+      {
+        id: "3.14",
+        termin: "2026-05-19",
+        zodpovedny: "AD + INV",
+        popis:
+          "AD + INV vyberou odstíny fasád a strukturu, následně zhotovitel provede vzorky.",
+        status: "otevreno",
+      },
+      {
+        id: "3.15",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel",
+        popis:
+          "Vnitřní schody – objednávka: vyjasnit, jak je objednáno.",
+        status: "otevreno",
+      },
+      {
+        id: "3.16",
+        termin: "2026-05-19",
+        zodpovedny: "AD + INV",
+        popis:
+          "Venkovní rozvody elektro – návrh specifikace. Pro světla nutno určit minimálně okruhy, systém ovládání a pozice ovládání. Dále zásuvky pro vybavení zahrady: sekačka, závlaha, vířivka, bazén, gril aj.",
+        status: "otevreno",
+      },
+      {
+        id: "3.17",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel + AD",
+        popis:
+          "Zhotovitel + AD provedou kontrolu objednaných oken, zda odpovídají PD – zejména jejich rozměry a napojení na ostatní konstrukce.",
+        status: "otevreno",
+      },
+      {
+        id: "3.18",
+        termin: "2026-05-19",
+        zodpovedny: "Zhotovitel + AD",
+        popis:
+          "Zhotovitel provede na místě konzultaci s dodavatelem dveří ohledně otvorů a provede sondy pro zasekání zárubní v monolitické konstrukci, tak aby nebyla přerušena výztuž.",
         status: "otevreno",
       },
     ],
