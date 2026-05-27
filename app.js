@@ -205,6 +205,7 @@ function renderUkoly(kd) {
           </div>
         </div>
         <div class="task-popis">${escHtml(u.popis)}</div>
+        ${u.dalsiKrok ? `<div class="task-dalsi-krok"><span class="dalsi-krok-label">${isSplneno ? "✓ Výsledek" : "→ Další krok"}</span>${escHtml(u.dalsiKrok)}</div>` : ""}
         <div class="task-footer">
           ${noteHtml}
           <button class="btn-confirm ${btnClass}" data-kd="${kd.id}" data-ukol="${u.id}" data-status="${status}">

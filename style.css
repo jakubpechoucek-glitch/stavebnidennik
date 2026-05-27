@@ -275,10 +275,34 @@ body {
 .task-meta span { display: flex; align-items: center; gap: 4px; }
 
 .task-popis {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 8px;
-  color: var(--text);
+  color: var(--text-muted);
   line-height: 1.5;
+}
+
+.task-dalsi-krok {
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+}
+.task-card[data-status="trva"]     .task-dalsi-krok { background: rgba(217,79,79,.1);  border-left: 3px solid var(--red); }
+.task-card[data-status="otevreno"] .task-dalsi-krok { background: rgba(224,123,57,.1); border-left: 3px solid var(--orange); }
+.task-card[data-status="splneno"]  .task-dalsi-krok { background: rgba(58,138,90,.1);  border-left: 3px solid var(--green); }
+.dalsi-krok-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  white-space: nowrap;
+  opacity: .7;
 }
 
 .task-footer {
