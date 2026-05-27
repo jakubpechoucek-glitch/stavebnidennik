@@ -225,13 +225,16 @@ function renderZapisky() {
   const container = document.getElementById("zapisky");
   container.innerHTML = ZAPISKY.map(kd => {
     const openCount = kd.ukoly.filter(u => getUkolStatus(kd.id, u) !== "splneno").length;
+    const kdMeta = kd.ukoly.length === 0
+      ? "Bez nových úkolů – viz předchozí KD"
+      : `Otevřené úkoly: ${openCount} / ${kd.ukoly.length}`;
 
     return `
       <section class="kd-section" id="kd-${kd.id}">
         <div class="kd-header" aria-expanded="true" data-kd="${kd.id}" role="button" tabindex="0">
           <div>
             <div class="kd-title">Kontrolní den ${kd.cislo} — ${formatDate(kd.datum)}</div>
-            <div class="kd-meta">Otevřené úkoly: ${openCount} / ${kd.ukoly.length}</div>
+            <div class="kd-meta">${kdMeta}</div>
           </div>
           <span class="kd-chevron">▼</span>
         </div>

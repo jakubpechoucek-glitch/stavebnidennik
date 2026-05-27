@@ -4,13 +4,14 @@ const PROJEKT = {
 };
 
 const ZAPISKY = [
+  // ── KD 1 – 19. 5. 2026 ───────────────────────────────────────────────────
   {
     id: "kd-2026-05-19",
     cislo: 1,
     datum: "2026-05-19",
     pritomni: [
       { role: "INV", jmeno: "manželé Pěchoučkovi" },
-      { role: "AD", jmeno: "Ing. Arch. Jakub Žák" },
+      { role: "AD",  jmeno: "Ing. Arch. Jakub Žák" },
       { role: "TDI", jmeno: "Jakub Bednář" },
       { role: "TDI", jmeno: "Jan Nekola", kontakt: "737 283 324" },
       { role: "Zhotovitel", jmeno: "Michal Lohoyda" },
@@ -28,140 +29,149 @@ const ZAPISKY = [
     ukoly: [
       {
         id: "3.1",
-        termin: "2026-04-28",
+        termin: "2026-06-07",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Předloží aktualizovaný HMG s následným postupem prací. Fáze stavby neodpovídá smluveným termínům. Nebyl splněn RPT 22.3.2026.",
         status: "trva",
+        popis: "Předloží aktualizovaný HMG s následným postupem prací. Fáze stavby neodpovídá smluveným termínům. Nebyl splněn RPT 22.3.2026. ▸ 26.5: zhotovitel si uvědomuje, doplní do 7.6.",
       },
       {
         id: "3.3",
         termin: "2026-04-28",
         zodpovedny: "Zhotovitel",
-        popis:
-          "U plotu na západní straně zjištěno kanalizační vedení od sousedního objektu. Stavba probere se sousedem a zajistí vyjádření. Bude kolidovat s provedením oplocení.",
-        status: "trva",
+        status: "splneno",
+        popis: "U plotu na záp. straně zjištěno kanalizační vedení od sousedního objektu – bude kolidovat s oplocením. ▸ 26.5: jde o staré potrubí souseda z doby stavby – lze zrušit, úkol se vypouští.",
       },
       {
         id: "3.4",
         termin: "2026-04-28",
         zodpovedny: "TDI / AD",
-        popis:
-          "Zhotovitel se dotazoval na ukončení drenáže okolo objektu. TDI předal dotaz na AD. Drenáž bude provedena dle PD, ukončena pod opěrnou stěnou.",
         status: "splneno",
+        popis: "Dotaz na ukončení drenáže okolo objektu. TDI předal dotaz na AD. Drenáž bude provedena dle PD, ukončena pod opěrnou stěnou.",
       },
       {
         id: "3.5",
         termin: "2026-04-28",
         zodpovedny: "AD",
-        popis:
-          "AD doplnil přesné pozice koncových prvků ZTI a elektro do pohledů. V případě nejasností zašle zhotovitel dotaz.",
         status: "splneno",
+        popis: "AD doplnil přesné pozice koncových prvků ZTI a elektro do pohledů. V případě nejasností zašle zhotovitel dotaz.",
       },
       {
         id: "3.6",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Rozvody ZTI – kanalizace není správně provedena. Redukce musí být provedeny klasickou redukcí (nikoli zkrácenou), izolace v celém rozsahu. Materiál vodovodních rozvodů zaměněn z výrobce Viega na Concept – dodat technické parametry obou výrobců a jejich porovnání. Dále kotvení vodovodního potrubí dle TL výrobce (izolace a kotvení v objímkách). Pokud mají být v ležatém potrubí umístěny excentrické redukce, instalují se tak, aby rovný povrch redukce byl nahoře.",
         status: "otevreno",
+        popis: "Rozvody ZTI – kanalizace správně neprovedena: redukce klasickou redukcí (nikoli zkrácenou), izolace v celém rozsahu. Materiál vody zaměněn Viega → Concept – dodat tech. parametry obou + porovnání. Kotvení potrubí dle TL výrobce. ▸ 26.5: OK, napravíme.",
       },
       {
         id: "3.7",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Otvory skrz ŽB konstrukce provádět dle PD pouze odvrty – nechat schválit.",
-        status: "otevreno",
+        status: "splneno",
+        popis: "Otvory skrz ŽB provádět dle PD pouze odvrty – nechat schválit. Prostupy a rozvody na podkladu DPS a INT současně. ▸ 26.5: prostupy zabetonovány, splněno.",
       },
       {
         id: "3.8",
         termin: "2026-06-20",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Provede 2× vzorek omítky: štuková omítka / sádrová stěrka + malba dle zadání.",
         status: "otevreno",
+        popis: "Provede 2× vzorek omítky: štuková / sádrová stěrka + malba dle zadání, do 20.6. ▸ 26.5: upřesnit typ omítky, potvrdit platnost interiérů. KEIM dodá typ a materiál pro vzorky – ZHOT se propojí s KEIM ohledně objednávky.",
       },
       {
         id: "3.9",
         termin: "2026-05-19",
         zodpovedny: "AD",
-        popis:
-          "AD zkonzultuje spotřebiče v kuchyňské lince pro kontrolu rozvodů voda, odpady, elektro. Zhotovitel ověří provedení na základě vybraných spotřebičů.",
-        status: "otevreno",
+        status: "trva",
+        popis: "AD zkonzultuje spotřebiče v kuchyňské lince (voda, odpady, elektro). Zhotovitel ověří provedení na základě vybraných spotřebičů. ▸ 26.5: TRVÁ.",
       },
       {
         id: "3.10",
         termin: "2026-05-19",
         zodpovedny: "AD + INV",
-        popis:
-          "AD + INV si potvrdí povrchy – zejména koupelen, ale i ostatní. Platí PD, nebo je nějaké upřesnění?",
         status: "otevreno",
+        popis: "AD + INV potvrdí povrchy – koupelny i ostatní. Platí PD, nebo upřesnění? ▸ 26.5: obstarat vzorky dle PD. AD zadá stěrky (typ, barevnost). Vzorky keramiky a vnitřních povrchů zajistí stavba.",
       },
       {
         id: "3.11",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Zhotovitel bude provádět polohy koncových prvků ZTI, UT a ELE dle PD interiéru.",
-        status: "otevreno",
+        status: "splneno",
+        popis: "Polohy koncových prvků ZTI, UT a ELE dle PD interiéru. ▸ 26.5: provádí se, vypouští se ze sledování.",
       },
       {
         id: "3.12",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Veškerá světla, která doposud nejsou provedena, budou provedena kabeláží 5×1,5.",
         status: "otevreno",
+        popis: "Světla bez provedení kabeláží 5×1,5. ▸ 26.5: 1. NP již provedeno v 3×1,5 – úkol platí pro 1. PP (kabeláž 5×1,5).",
       },
       {
         id: "3.13",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Zhotovitel měl ověřit alternativu ke světlíku v pracovně – byla předložena pouze úspora ve stávající nabídce. Prosíme o alternativu od jiného dodavatele.",
         status: "otevreno",
+        popis: "Alternativa ke světlíku v pracovně – předložena pouze úspora, prosíme o nabídku jiného dodavatele. ▸ 26.5: poptávka zaslána firmě Značková okna.",
       },
       {
         id: "3.14",
         termin: "2026-05-19",
         zodpovedny: "AD + INV",
-        popis:
-          "AD + INV vyberou odstíny fasád a strukturu, následně zhotovitel provede vzorky.",
         status: "otevreno",
+        popis: "AD + INV vyberou odstíny fasád a strukturu, zhotovitel provede vzorky. ▸ 26.5: KEIM dodá typ a materiál – ZHOT se propojí s KEIM ohledně objednávky a logistiky.",
       },
       {
         id: "3.15",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        popis:
-          "Vnitřní schody – objednávka: vyjasnit, jak je objednáno.",
         status: "otevreno",
+        popis: "Vnitřní schody – vyjasnit objednávku. ▸ 26.5: zatím pouze CN JAP. ZHOT objedná technika na zaměření a kontrolu dle PD. Pokud nevyhovuje, provede se dle PD INT.",
       },
       {
         id: "3.16",
         termin: "2026-05-19",
         zodpovedny: "AD + INV",
-        popis:
-          "Venkovní rozvody elektro – návrh specifikace. Pro světla nutno určit minimálně okruhy, systém ovládání a pozice ovládání. Dále zásuvky pro vybavení zahrady: sekačka, závlaha, vířivka, bazén, gril aj.",
-        status: "otevreno",
+        status: "trva",
+        popis: "Venkovní rozvody elektro – specifikace okruhů světel, ovládání, zásuvky pro zahradu (sekačka, závlaha, vířivka, bazén, gril…). ▸ 26.5: TRVÁ.",
       },
       {
         id: "3.17",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel + AD",
-        popis:
-          "Zhotovitel + AD provedou kontrolu objednaných oken, zda odpovídají PD – zejména jejich rozměry a napojení na ostatní konstrukce.",
-        status: "otevreno",
+        status: "trva",
+        popis: "Kontrola objednaných oken – rozměry a napojení na ostatní kce. ▸ 26.5: OK – TRVÁ.",
       },
       {
         id: "3.18",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel + AD",
-        popis:
-          "Zhotovitel provede na místě konzultaci s dodavatelem dveří ohledně otvorů a provede sondy pro zasekání zárubní v monolitické konstrukci, tak aby nebyla přerušena výztuž.",
-        status: "otevreno",
+        status: "trva",
+        popis: "Konzultace s dodavatelem dveří, sondy pro zasekání zárubní v monolitu (bez přerušení výztuže). ▸ 26.5: předběžně domluvena účast dodavatele na příštím KD – objedná ZHOT. TRVÁ.",
       },
     ],
+  },
+
+  // ── KD 2 – 26. 5. 2026 ───────────────────────────────────────────────────
+  {
+    id: "kd-2026-05-26",
+    cislo: 2,
+    datum: "2026-05-26",
+    pritomni: [
+      { role: "INV", jmeno: "manželé Pěchoučkovi" },
+      { role: "AD",  jmeno: "Ing. Arch. Jakub Žák" },
+      { role: "TDI", jmeno: "Jakub Bednář" },
+      { role: "TDI", jmeno: "Jan Nekola", kontakt: "737 283 324" },
+      { role: "Zhotovitel", jmeno: "Michal Lohoyda" },
+    ],
+    prubehy: [
+      "Provádí se: vyzdívání příček, montáž hrubých rozvodů ZTI, montáž HI soklu, parotěsné zábrany střechy, rozvody ELEKTRO",
+      "Následné práce: vyzdívky příček, rozvody ELEKTRO",
+      "BOZP: kontrola zábradlí, otvory ve stropu a úklid – OK",
+    ],
+    zmeny: [
+      "Světlík: poptávka odeslána firmě Značková okna",
+      "25.5: zaslán dotaz objednateli na platnost interiérů",
+      "Kabeláž pro trafa do rozvaděče – navíc rozvaděč = větší",
+      "Vyjma 1. NP všude kabel 5×1,5 místo 3×1,5",
+    ],
+    ukoly: [],
   },
 ];
