@@ -70,7 +70,7 @@ function computeStats() {
 
 // ── Filter state ──────────────────────────────────────────────────────────────
 
-let activeFilter = "vse";
+let activeFilters = new Set(["vse"]);   // multi-select
 let activePersonFilter = "vse";
 
 // ── Dialog ────────────────────────────────────────────────────────────────────
@@ -174,7 +174,7 @@ function renderUkoly(kd) {
     const cas      = state[key]?.casPotvrzeni;
 
     const isSplneno = status === "splneno";
-    const statusMatch = activeFilter === "vse" || status === activeFilter;
+    const statusMatch = activeFilters.has("vse") || activeFilters.has(status);
     const personMatch = activePersonFilter === "vse" || personInZodpovedny(u.zodpovedny, activePersonFilter);
     const hidden = !statusMatch || !personMatch;
 
@@ -266,7 +266,7 @@ function renderEmptyState() {
   const visibleCount = allTasks.filter(u => {
     const kd = ZAPISKY.find(k => k.ukoly.includes(u));
     const s  = getUkolStatus(kd.id, u);
-    return activeFilter === "vse" || s === activeFilter;
+    return activeFilters.has("vse") || activeFilters.has(s);
   }).length;
 
   const emptyEl = document.getElementById("empty-state");
@@ -368,12 +368,28 @@ function attachCardListeners() {
   });
 }
 
+function syncFilterBtnClasses() {
+  document.querySelectorAll(".filter-btn[data-filter]").forEach(b => {
+    b.classList.toggle("active", activeFilters.has(b.dataset.filter));
+  });
+}
+
 function attachFilterListeners() {
   document.querySelectorAll(".filter-btn[data-filter]").forEach(btn => {
     btn.addEventListener("click", () => {
-      activeFilter = btn.dataset.filter;
-      document.querySelectorAll(".filter-btn[data-filter]").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+      const f = btn.dataset.filter;
+      if (f === "vse") {
+        activeFilters = new Set(["vse"]);
+      } else {
+        activeFilters.delete("vse");
+        if (activeFilters.has(f)) {
+          activeFilters.delete(f);
+          if (activeFilters.size === 0) activeFilters = new Set(["vse"]);
+        } else {
+          activeFilters.add(f);
+        }
+      }
+      syncFilterBtnClasses();
       renderPersonFilters();
       renderZapisky();
       renderEmptyState();
