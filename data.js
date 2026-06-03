@@ -65,7 +65,7 @@ const ZAPISKY = [
         zodpovedny: "Zhotovitel",
         status: "otevreno",
         popis: "Rozvody ZTI – kanalizace provedena nesprávně: redukce zkrácenou místo klasickou metodou, izolace neprovedeny v celém rozsahu. Materiál vody zaměněn od Viega na Concept. Kotvení potrubí neodpovídá TL výrobce.",
-        dalsiKrok: "Zhotovitel potvrdil nápravu (2.6: „OK napravíme"). Doplnění: excentrické redukce v ležatém potrubí instalovat rovným povrchem nahoře. Zhotovitel doloží provedení všech oprav: (1) klasické redukce, (2) izolace v plném rozsahu, (3) tech. parametry Viega vs. Concept, (4) kotvení a izolace v objímkách.",
+        dalsiKrok: "Zhotovitel potvrdil nápravu (2.6: 'OK napravíme'). Doplnění: excentrické redukce v ležatém potrubí instalovat rovným povrchem nahoře. Zhotovitel doloží provedení všech oprav: (1) klasické redukce, (2) izolace v plném rozsahu, (3) tech. parametry Viega vs. Concept, (4) kotvení a izolace v objímkách.",
       },
       {
         id: "3.7",
