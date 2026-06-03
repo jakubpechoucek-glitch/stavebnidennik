@@ -65,7 +65,7 @@ const ZAPISKY = [
         zodpovedny: "Zhotovitel",
         status: "otevreno",
         popis: "Rozvody ZTI – kanalizace provedena nesprávně: redukce zkrácenou místo klasickou metodou, izolace neprovedeny v celém rozsahu. Materiál vody zaměněn od Viega na Concept. Kotvení potrubí neodpovídá TL výrobce.",
-        dalsiKrok: "Zhotovitel: (1) provede opravy redukcí (klasická metoda), (2) doloží izolace v plném rozsahu, (3) dodá tech. parametry Viega vs. Concept pro porovnání, (4) zkontroluje kotvení a izolace v objímkách.",
+        dalsiKrok: "Zhotovitel potvrdil nápravu (2.6: „OK napravíme"). Doplnění: excentrické redukce v ležatém potrubí instalovat rovným povrchem nahoře. Zhotovitel doloží provedení všech oprav: (1) klasické redukce, (2) izolace v plném rozsahu, (3) tech. parametry Viega vs. Concept, (4) kotvení a izolace v objímkách.",
       },
       {
         id: "3.7",
@@ -89,7 +89,7 @@ const ZAPISKY = [
         zodpovedny: "AD",
         status: "trva",
         popis: "AD zkonzultuje výběr spotřebičů v kuchyňské lince pro ověření správnosti rozvodů voda, odpady a elektro.",
-        dalsiKrok: "AD zkonsultuje a potvrdí výběr spotřebičů kuchyně, zhotovitel na základě toho ověří a případně upraví rozvody.",
+        dalsiKrok: "28.5. zaslán vývodový plán instalací od dodavatele kuchyně. Stále otevřeno: nutno dořešit provedení odtahu digestoře na fasádě – AD upřesní řešení, zhotovitel upraví rozvody.",
       },
       {
         id: "3.10",
@@ -111,9 +111,9 @@ const ZAPISKY = [
         id: "3.12",
         termin: "2026-05-19",
         zodpovedny: "Zhotovitel",
-        status: "otevreno",
+        status: "splneno",
         popis: "Veškerá světla bez provedené kabeláže budou provedena kabelem 5×1,5. Upřesnění (26.5): 1. NP již provedeno v 3×1,5 – tento úkol platí pouze pro 1. PP.",
-        dalsiKrok: "Zhotovitel provede kabeláž všech světel v 1. PP kabelem 5×1,5.",
+        dalsiKrok: "Splněno (2.6.2026): kabeláž světel v 1. PP kabelem 5×1,5 provedena. Úkol se vypouští ze sledování.",
       },
       {
         id: "3.13",
@@ -121,7 +121,7 @@ const ZAPISKY = [
         zodpovedny: "Zhotovitel",
         status: "otevreno",
         popis: "Ověřit alternativu ke světlíku v pracovně – dosud předložena pouze úspora ve stávající nabídce, nikoliv nabídka jiného dodavatele.",
-        dalsiKrok: "Zhotovitel vyčká na cenovou nabídku od firmy Značková okna (poptávka odeslána 26.5.) a předloží ji INV k rozhodnutí.",
+        dalsiKrok: "Zhotovitel vyčká na cenovou nabídku od firmy Značková okna (poptávka odeslána 26.5.). Stav 2.6: CN dosud nedoručena, úkol stále trvá. Po obdržení CN předloží INV k rozhodnutí.",
       },
       {
         id: "3.14",
@@ -161,7 +161,7 @@ const ZAPISKY = [
         zodpovedny: "Zhotovitel + AD",
         status: "trva",
         popis: "Konzultace s dodavatelem dveří ohledně otvorů. Sondy pro zasekání zárubní v monolitické konstrukci – bez přerušení výztuže.",
-        dalsiKrok: "Zhotovitel potvrdí účast dodavatele dveří na příštím KD a provede nezbytné sondy pro zasekání zárubní.",
+        dalsiKrok: "Sondy provedeny (2.6.2026) – zjištěna možná úprava konstrukce. Zhotovitel zajistí návštěvu dodavatele dveří na stavbě za účelem zaměření a potvrzení řešení zárubní.",
       },
     ],
   },
@@ -185,6 +185,32 @@ const ZAPISKY = [
     ],
     zmeny: [
       "Světlík: poptávka odeslána firmě Značková okna",
+      "25.5: zaslán dotaz objednateli na platnost interiérů",
+      "Kabeláž pro trafa do rozvaděče – navíc rozvaděč = větší",
+      "Vyjma 1. NP všude kabel 5×1,5 místo 3×1,5",
+    ],
+    ukoly: [],
+  },
+
+  // ── KD 3 – 2. 6. 2026 ────────────────────────────────────────────────────
+  {
+    id: "kd-2026-06-02",
+    cislo: 3,
+    datum: "2026-06-02",
+    pritomni: [
+      { role: "INV", jmeno: "manželé Pěchoučkovi" },
+      { role: "AD",  jmeno: "Ing. Arch. Jakub Žák" },
+      { role: "TDI", jmeno: "Jakub Bednář" },
+      { role: "TDI", jmeno: "Jan Nekola", kontakt: "737 283 324" },
+      { role: "Zhotovitel", jmeno: "Michal Lohoyda" },
+    ],
+    prubehy: [
+      "Provádí se: vyzdívání příček, montáž HI soklu, parotěsné zábrany střechy, rozvody ELEKTRO",
+      "Následné práce: rozvody ELEKTRO, SLABOPROUD, EZS apod.",
+      "BOZP: nutno kontrolovat zábradlí, otvory ve stropu a úklid – OK",
+    ],
+    zmeny: [
+      "Poptávka světlíku u Značková okna – probíhá",
       "25.5: zaslán dotaz objednateli na platnost interiérů",
       "Kabeláž pro trafa do rozvaděče – navíc rozvaděč = větší",
       "Vyjma 1. NP všude kabel 5×1,5 místo 3×1,5",
