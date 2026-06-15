@@ -386,9 +386,101 @@ body {
   font-size: 14px;
 }
 
+/* ── Edit task button ── */
+.btn-edit-task {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: .45;
+  transition: opacity .15s;
+  flex-shrink: 0;
+}
+.btn-edit-task:hover { opacity: 1; }
+
+/* ── Add task button ── */
+.btn-add-task {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  background: none;
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.btn-add-task:hover { border-color: var(--blue); color: var(--blue); }
+
+/* ── Add KD bar ── */
+.add-kd-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+.btn-add-kd {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--blue);
+  background: var(--blue-light);
+  color: var(--blue);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.btn-add-kd:hover { background: var(--blue); color: #fff; }
+
+/* ── Wide dialog (edit / add KD) ── */
+.wide-dialog { max-width: 600px; }
+
+/* ── Form elements in dialogs ── */
+.form-group {
+  margin-bottom: 14px;
+}
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+  box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { outline: none; border-color: var(--blue); }
+.form-group input[readonly] { background: var(--gray-light); color: var(--text-muted); }
+.form-group textarea { resize: vertical; }
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
 @media (max-width: 700px) {
   .top-section { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(3, 1fr); }
+  .form-row-2 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 540px) {

@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stavební deník – Podolanka</title>
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="header-icon">🏗️</div>
     <div>
@@ -19,7 +18,6 @@
 
   <main class="container">
 
-    <!-- Top section: stats + summary table -->
     <div class="top-section">
       <div class="stats">
         <div class="stat-card red">
@@ -41,7 +39,6 @@
       </div>
     </div>
 
-    <!-- Filters -->
     <div class="filter-group">
       <span class="filter-label">Stav:</span>
       <div class="filters">
@@ -56,17 +53,19 @@
       <div class="filters" id="person-filters"></div>
     </div>
 
-    <!-- KD list -->
+    <div class="add-kd-bar">
+      <button class="btn-add-kd" id="btn-add-kd">+ Přidat nový kontrolní den</button>
+    </div>
+
     <div id="zapisky"></div>
 
-    <!-- Empty state -->
     <div id="empty-state" class="empty-state" style="display:none">
       Žádné úkoly odpovídají zvoleném filtru.
     </div>
 
   </main>
 
-  <!-- Confirm dialog -->
+  <!-- Confirm status dialog -->
   <div class="overlay hidden" id="overlay">
     <div class="dialog">
       <h3 id="dialog-title">Označit jako splněno</h3>
@@ -79,7 +78,85 @@
     </div>
   </div>
 
-  <script src="data.js?v=6"></script>
-  <script src="app.js?v=6"></script>
+  <!-- Edit / Add task dialog -->
+  <div class="overlay hidden" id="edit-overlay">
+    <div class="dialog wide-dialog">
+      <h3 id="edit-dialog-title">Upravit úkol</h3>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>ID úkolu</label>
+          <input type="text" id="edit-id" placeholder="např. 4.1" />
+        </div>
+        <div class="form-group">
+          <label>Termín</label>
+          <input type="date" id="edit-termin" />
+        </div>
+      </div>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Zodpovědný</label>
+          <input type="text" id="edit-zodpovedny" placeholder="např. Zhotovitel nebo AD + INV" />
+        </div>
+        <div class="form-group">
+          <label>Stav</label>
+          <select id="edit-status">
+            <option value="trva">Trvá</option>
+            <option value="otevreno">Otevřeno</option>
+            <option value="splneno">Splněno</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Popis úkolu</label>
+        <textarea id="edit-popis" rows="3" placeholder="Co bylo zjištěno / zadáno…"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Další krok / výsledek</label>
+        <textarea id="edit-dalsi-krok" rows="2" placeholder="Co je třeba udělat nebo co bylo vyřešeno…"></textarea>
+      </div>
+      <div class="dialog-btns">
+        <button class="btn-cancel" id="edit-cancel">Zrušit</button>
+        <button class="btn-ok"     id="edit-ok">Uložit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add KD dialog -->
+  <div class="overlay hidden" id="kd-overlay">
+    <div class="dialog wide-dialog">
+      <h3>Přidat nový kontrolní den</h3>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label>Datum</label>
+          <input type="date" id="kd-datum" />
+        </div>
+        <div class="form-group">
+          <label>Číslo KD</label>
+          <input type="number" id="kd-cislo" min="1" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Přítomni (jeden na řádek – ROLE: Jméno nebo ROLE: Jméno (tel.))</label>
+        <textarea id="kd-pritomni" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Průběh prací (jeden bod na řádek)</label>
+        <textarea id="kd-prubehy" rows="3" placeholder="Provádí se: …"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Změny zadání (jeden bod na řádek)</label>
+        <textarea id="kd-zmeny" rows="3" placeholder="Změna …"></textarea>
+      </div>
+      <div class="dialog-btns">
+        <button class="btn-cancel" id="kd-cancel">Zrušit</button>
+        <button class="btn-ok"     id="kd-ok">Přidat KD</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="app.js?v=7"></script>
 </body>
 </html>
